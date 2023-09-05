@@ -55,7 +55,7 @@ export default {
         );
         if (user) {
           this.$emit("loggedIn", user);
-          this.$router.push({ path: "/user-view" });
+          this.$router.push({ path: "/" });
         } else {
           console.log("erorr!!!!");
         }

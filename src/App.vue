@@ -1,38 +1,39 @@
 <template>
   <div id="app">
-    <ModalUserLoginForm :showModal="showModal" v-if="$route.path === '/'">
+    <!-- <ModalUserLoginForm :showModal="showModal" v-if="$route.path === '/'">
       <template #header>description</template>
       <template #body>
         <UserLoginForm @loggedIn="updateUser" />
       </template>
     </ModalUserLoginForm>
-    <UserView v-else :user="user" />
+    <UserView v-else :user="user" /> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ModalUserLoginForm from "./components/ModalUserLoginForm.vue";
-import UserLoginForm from "./components/UserLoginForm.vue";
+// import ModalUserLoginForm from "./components/ModalUserLoginForm.vue";
+// import UserLoginForm from "./components/UserLoginForm.vue";
 
-import UserView from "./pages/UserView";
+// import UserView from "./pages/UserView";
 
 export default {
   name: "App",
   components: {
-    UserLoginForm,
-    ModalUserLoginForm,
-    UserView,
+    // UserLoginForm,
+    // ModalUserLoginForm,
+    // UserView,
   },
   data() {
     return {
       showModal: true,
     };
   },
-  methods: {
-    updateUser(user) {
-      this.user = user;
-    },
-  },
+  // methods: {
+  //   updateUser(user) {
+  //     this.user = user;
+  //   },
+  // },
 };
 </script>
 

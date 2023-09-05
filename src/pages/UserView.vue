@@ -6,7 +6,7 @@
       <div>{{ user.name }}</div>
       <div>Username</div>
       <div>{{ user.username }}</div>
-      <div>Email</div>
+      <!-- <div>Email</div>
       <div>{{ user.email }}</div>
       <div>Address</div>
       <div>
@@ -18,7 +18,7 @@
       <div>Website</div>
       <div>{{ user.website }}</div>
       <div>Company</div>
-      <div>{{ user.company.name }}</div>
+      <div>{{ user.company.name }}</div> -->
     </div>
     <GetDataComponent />
   </div>
@@ -32,10 +32,18 @@ export default {
     GetDataComponent,
   },
   props: {
-    user: {
-      required: true,
-      type: Object,
-    },
+    // user: {
+    //   required: true,
+    //   type: Object,
+    // },
+  },
+  data() {
+    return {
+      user: {
+        username: "dddd",
+        name: "ffffff",
+      },
+    };
   },
 };
 </script>

@@ -3,11 +3,11 @@
     <div class="modal-mask" v-show="showModal" @click="close">
       <div class="modal-wrapper" @click.stop>
         <div class="modal-header">
-          <slot name="header"> default header </slot>
+          <slot name="header"> description </slot>
         </div>
 
         <div class="modal-body">
-          <slot name="body"> default body </slot>
+          <slot name="body"> <UserLoginForm @loggedIn="updateUser" /> </slot>
         </div>
       </div>
     </div>
@@ -15,17 +15,27 @@
 </template>
 
 <script>
+import UserLoginForm from "@/components/UserLoginForm.vue";
 export default {
   name: "ModalUserLoginForm",
+  components: { UserLoginForm },
   props: {
-    showModal: {
-      type: Boolean,
-      required: true,
-    },
+    // showModal: {
+    //   type: Boolean,
+    //   required: true,
+    // },
+  },
+  data() {
+    return {
+      showModal: true,
+    };
   },
   methods: {
     close() {
       this.$emit("close");
+    },
+    updateUser(user) {
+      this.user = user;
     },
   },
 };
